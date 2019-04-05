@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: dstorch
+Version: 0.0.5
+Summary: A humble package for algorithms and data, implemented in PyTorch.
+Home-page: http://github.com/savourylie/dstorch
+Author: Calvin Ku
+Author-email: calvin.j.ku@googlemail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
