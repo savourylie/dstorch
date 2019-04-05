@@ -1,0 +1,1 @@
+from .initialization import random_weight_init
