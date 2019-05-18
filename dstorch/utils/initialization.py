@@ -11,3 +11,5 @@ def random_weight_init(module, itype='kaiming'):
             layer.bias.data.fill_(0)
         elif classname.find('Linear') != -1:
             layer.weight.data = nn.init.kaiming_normal_(layer.weight.data)
+
+    return module
