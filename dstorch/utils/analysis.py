@@ -11,6 +11,14 @@ def calc_jacobian(model, img):
 
     return jacobian
 
-def calc_frobenius_norm(matrix):
+# def calc_frobenius_norm(matrix):
 
-    return torch.sqrt((matrix ** 2).sum((1, 2))
+#     return torch.sqrt((matrix ** 2).sum((1, 2))
+
+def calc_gradient_norm(model):
+	for p in model.parameters():
+	            param_norm = p.grad.data.norm(2)
+	            total_norm += param_norm.item() ** 2
+	        total_norm = total_norm ** (1. / 2)
+
+	return total_norm
