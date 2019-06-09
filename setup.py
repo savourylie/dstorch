@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(name='dstorch',
-      version='0.0.7',
+      version='0.0.10',
       description='A humble package for algorithms and data, implemented in PyTorch.',
    	  package_dir = {
             'data': 'data',
