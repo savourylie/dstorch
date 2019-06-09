@@ -39,3 +39,41 @@ class Cutout(object):
         img = img * mask
 
         return img
+
+
+class RandomResizedCropSquareNoPad(object):
+    """
+    This is the no padding version of torchvision's RandomResizedCrop.
+    """
+
+    def __init__(self, size, scale=(0.08, 1.0)):
+        self.size = size
+        self.scale = scale
+
+    def __call__(self, img_pil):
+        """
+        Args:
+            img (PIL image) of size (C, H, W)
+        Returns:
+            A square cropped version of the original image.
+
+        """
+        img = np.array(img_pil)
+
+        height, width, num_channels = img.shape
+
+        ratio = np.random.uniform(self.scale[0], self.scale[1])
+
+        max_width = int(min(height, width) * ratio)
+
+        x_min, x_max = max_width // 2, height - max_width // 2
+        y_min, y_max = max_width // 2, width - max_width // 2
+
+        x, y = np.random.randint(x_min, x_max), np.random.randint(y_min, y_max)
+
+        img_rescaled = img[x-  max_width : x + max_width, y - max_width : y + max_width]
+        img_resized = cv2.resize(img_rescaled, (self.size, self.size))
+
+        img_pil = Image.fromarray(img_resized)
+
+        return img_pil
