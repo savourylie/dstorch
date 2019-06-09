@@ -1,6 +1,6 @@
 Metadata-Version: 1.0
 Name: dstorch
-Version: 0.0.7
+Version: 0.0.9
 Summary: A humble package for algorithms and data, implemented in PyTorch.
 Home-page: http://github.com/savourylie/dstorch
 Author: Calvin Ku
