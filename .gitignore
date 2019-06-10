@@ -1,2 +1,6 @@
 # Python meta
 __pycache__/
+
+# MacOS Index
+.DS_Store
+

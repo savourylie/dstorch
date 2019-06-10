@@ -1,22 +1,19 @@
 import torch
 from tqdm import tqdm, tqdm_notebook
 
-def calc_data_stats(data_loader, dtype='image', repeat=10):
-    batch_size = data_loader.batch_size
 
+def calc_data_stats(data_loader, dtype='image', repeat=10):
     sample_size = 0
     mean_list = []
     
     try:
         _ = __IPYTHON__
-
     except NameError:        
         for _ in tqdm(range(repeat)):
             for data in data_loader:
                 x, y = data
                 x = x.view(x.size(0), x.size(1), -1)
                 mean_list.append(x.mean(2).mean(0))
-
                 sample_size += x.shape[0] 
     else:
         for _ in tqdm_notebook(range(repeat)):
@@ -24,7 +21,6 @@ def calc_data_stats(data_loader, dtype='image', repeat=10):
                 x, y = data
                 x = x.view(x.size(0), x.size(1), -1)
                 mean_list.append(x.mean(2).mean(0))
-
                 sample_size += x.shape[0] 
         
     mean = torch.stack(mean_list).mean(dim=0)

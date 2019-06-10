@@ -15,3 +15,8 @@ git clone https://github.com/savourylie/dstorch.git
 cd dstorch
 pip install .
 ```
+
+# Usage
+## Stats submodule
+```
+```
