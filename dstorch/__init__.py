@@ -1,4 +1,4 @@
-__version__ = '0.0.1.dev0'
-__all__ = ['data']
+__version__ = '0.0.7'
+__all__ = ['data', 'utils']
 
 
